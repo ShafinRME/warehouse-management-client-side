@@ -11,16 +11,18 @@ const Inventories = () => {
             .then(data => setInventories(data));
     }, [])
     return (
-        <div>
-            <h2>This is inventories: {inventories.length}</h2>
-            {
-                inventories.map(inventory => <Inventory
-                    key={inventory.id}
-                    inventory={inventory}
-                >
+        <div className='container '>
+            <h2 className='text-center p-5 inventories-header'>Our Inventories</h2>
+            <div className="inventories-container">
+                {
+                    inventories.slice(0, 6).map(inventory => <Inventory
+                        key={inventory.id}
+                        inventory={inventory}
+                    >
 
-                </Inventory>)
-            }
+                    </Inventory>)
+                }
+            </div>
 
         </div>
     );

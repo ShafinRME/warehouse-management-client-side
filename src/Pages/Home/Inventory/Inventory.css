@@ -1,0 +1,31 @@
+.inventory-container {
+    text-align: center;
+    border: 2px solid rgb(9, 187, 18);
+    border-radius: 20px;
+    padding: 5%;
+    width: auto;
+    background-color: #283b41;
+    color: white;
+    font-family: Segoe Print;
+}
+
+.inventory-container img {
+    width: 100%;
+}
+
+.inventory-container:hover {
+    background-color: #212c4bfd;
+    border: none;
+}
+
+.inventory-button {
+    width: 75%;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: rgba(46, 139, 86, 0.397);
+}
+
+.inventory-button:hover {
+    background-color: rgb(46, 139, 86);
+}
