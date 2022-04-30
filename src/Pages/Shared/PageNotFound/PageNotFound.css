@@ -1,0 +1,136 @@
+.footer {
+    background-color: rgb(241, 248, 248);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.footer1 h1 {
+    transition: transform 5s ease-in;
+}
+
+.footer1:hover h1 {
+    transform: rotate(360deg);
+}
+
+.footer1 p {
+    transition: transform 5s ease-in;
+}
+
+.footer1:hover p {
+    transform: rotate(720deg);
+}
+
+.footer1 h3 {
+    transition: transform 5s ease-in;
+}
+
+.footer1:hover h3 {
+    transform: rotate(1080deg);
+}
+
+
+.footer1 h1 {
+    font-family: papyrus;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    color: red;
+}
+
+.footer1 p {
+    font-family: papyrus;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    color: darkmagenta;
+}
+
+.footer1 h3 {
+    font-family: papyrus;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    color: rgb(95, 235, 31)
+}
+
+.footer2 img {
+    width: 800px;
+    height: 600px;
+    margin-left: 220px;
+    margin-bottom: 100px;
+
+}
+
+.image {
+    transition: transform 5s ease-out;
+}
+
+.image:hover {
+    transform: rotate(360deg);
+}
+
+.footer-button {
+    width: 150px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-family: Lucida Handwriting;
+    font-weight: 700;
+    background-color: rgba(79, 79, 209, 0.555);
+    margin-left: 50%;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+
+}
+
+.footer-button:hover {
+    background-color: rgb(79, 79, 209);
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 800px) {
+
+    .footer1 h1 {
+        font-family: papyrus;
+        font-weight: 700;
+        font-size: 18px;
+        color: red;
+        margin-left: 10px;
+        padding-left: 5px;
+    }
+
+    .footer1 p {
+        font-family: papyrus;
+        font-weight: 700;
+        font-size: 18px;
+        margin-right: 10px;
+        color: darkmagenta;
+    }
+
+    .footer1 h3 {
+        font-family: papyrus;
+        font-weight: 700;
+        font-size: 18px;
+        margin-right: 10px;
+        color: rgb(95, 235, 31)
+    }
+
+    .image {
+        width: 300px;
+        height: 230px;
+        margin-left: 30px;
+    }
+
+    .footer-button {
+        width: 150px;
+        height: 40px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        font-family: Lucida Handwriting;
+        font-weight: 700;
+        background-color: rgba(79, 79, 209, 0.555);
+        color: white;
+        cursor: pointer;
+        margin-left: 115px;
+    }
+}
