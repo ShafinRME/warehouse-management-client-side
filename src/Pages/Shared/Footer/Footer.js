@@ -15,7 +15,7 @@ const Footer = () => {
             </div>
             <hr />
 
-            <p className='d-flex last-line'> Copyright &copy; {new Date().getFullYear()} <div className='horizontal-line'>  </div> Spacex-car-inventory</p>
+            <p className='d-flex last-line'> Copyright &copy; {new Date().getFullYear()} <div className='horizontal-line'>  </div> SpaceX Car House</p>
         </footer>
     );
 };
