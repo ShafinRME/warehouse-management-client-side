@@ -1,0 +1,45 @@
+.countup {
+    background-color: rgba(38, 143, 103, 0.808);
+    text-align: center;
+}
+
+.stat-summary {
+    background-color: rgba(12, 153, 42, 0.795);
+    font-family: MV Boli;
+    font-weight: 700;
+    color: rgb(200, 240, 25);
+    font-size: 50px;
+}
+
+.header {
+    font-size: 50px;
+    color: rgba(200, 245, 38, 0.986);
+    font-family: Impact;
+    font-weight: 700;
+}
+
+.counter {
+    font-size: 50px;
+    font-family: Ink Free;
+    font-weight: 700;
+    color: rgb(231, 216, 230);
+}
+
+.logo-header {
+    font-weight: 700;
+    font-family: Comic Sans MS;
+    color: rgb(43, 54, 4);
+}
+
+.inventories-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+}
+
+.social-media {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}

@@ -1,0 +1,20 @@
+.comment-container {
+    text-align: center;
+    border: 2px solid rgb(9, 187, 18);
+    border-radius: 20px;
+    padding: 10%;
+    width: auto;
+    background-color: #3d2e0ee7;
+    color: white;
+    font-size: 20px;
+    font-family: Comic Sans MS;
+}
+
+.comment-container img {
+    width: 40%;
+    border-radius: 80px;
+}
+
+.font-color {
+    color: yellow;
+}

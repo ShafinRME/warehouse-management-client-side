@@ -1,0 +1,16 @@
+.comments-header {
+    background-color: rgba(230, 36, 78, 0.795);
+    font-family: MV Boli;
+    font-weight: 700;
+    color: rgba(233, 229, 19, 0.986);
+    font-size: 50px;
+}
+
+
+.comments-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    background-color: #24cfaafd;
+    padding: 10px;
+}
