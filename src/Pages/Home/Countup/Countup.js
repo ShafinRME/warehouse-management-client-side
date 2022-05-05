@@ -6,7 +6,7 @@ import './Countup.css'
 
 const Countup = () => {
     return (
-        <div className='container'>
+        <div id='statistics' className='container'>
             <h3 className='text-center p-5 mt-3 mb-3 stat-summary'>Our Statistics</h3>
             <div className='countup mb-3'>
 

@@ -12,7 +12,7 @@ const Comments = () => {
 
 
     return (
-        <div className='container'>
+        <div id='comments' className='container'>
             <h3 className='text-center p-5 mt-3 mb-3 comments-header'>Comments</h3>
             <div className='comments-container'>
                 {
