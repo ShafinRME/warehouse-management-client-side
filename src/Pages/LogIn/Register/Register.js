@@ -1,33 +1,39 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './Register.css';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
+    const navigate = useNavigate();
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const nameRef = useRef('');
+    const [agree, setAgree] = useState(false);
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
-
-    if (user) {
-        navigate('/home');
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating, updateeError] = useUpdateProfile(auth);
+    if (loading || updating) {
+        return <Loading></Loading>
     }
 
-    const navigate = useNavigate();
-    const emailRef = useRef('');
-    const passwordRef = useRef('');
-    const nameRef = useRef('');
-    const handleRegister = event => {
+    const handleRegister = async (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const name = nameRef.current.value;
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+        alert('Updated profile');
+        navigate('/home')
+
     }
     return (
         <div className='container w-50 mx-auto'>
@@ -47,14 +53,14 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                <Form.Group className="mb-3" controlId="terms">
+                    <Form.Check onClick={() => setAgree(!agree)} className={agree ? 'text-primary' : ''} type="checkbox" label="Accept SpaceX Car House Terms and Conditions." />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button disabled={!agree} className='d-block mx-auto w-50 mb-5 mt-4' variant="primary" type="submit">
                     Register
                 </Button>
             </Form>
-            <p>Already Have an Account ? <Link to="/login" className='text-danger text-decoration-none' >Please Login Here.</Link> </p>
+            <p>Already Have an Account ? <Link to="/login" className='text-primary text-decoration-none' >Please Login Here.</Link> </p>
             <SocialLogin></SocialLogin>
         </div>
     );

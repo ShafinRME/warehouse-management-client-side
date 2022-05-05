@@ -1,10 +1,13 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -12,16 +15,15 @@ const Login = () => {
     const passwordRef = useRef('');
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
 
-
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useSignInWithEmailAndPassword(auth);
     let errorElement;
+
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
@@ -37,8 +39,17 @@ const Login = () => {
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password)
     }
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent Email Just Now')
+        }
+        else {
+            toast('Please Enter Your Email Address!!!');
+        }
 
-
+    }
 
     return (
         <div className='container w-50 mx-auto'>
@@ -53,16 +64,15 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button className='d-block mx-auto w-50 mb-5 mt-4' variant="primary" type="submit">
                     Login
                 </Button>
             </Form>
             {errorElement}
-            <p>New to SpaceX Car House ? <Link to="/register" className='text-danger text-decoration-none' >Please Register Here.</Link> </p>
+            <p>New to SpaceX Car House ? <Link to="/register" className='text-primary text-decoration-none' >Please Register Here.</Link> </p>
+            <p>Forget Password ? <button className='text-primary text-decoration-none btn btn-link' onClick={resetPassword} >Reset Your Password.</button> </p>
             <SocialLogin></SocialLogin>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
