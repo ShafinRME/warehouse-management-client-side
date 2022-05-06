@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 import './Inventory.css'
 
 const Inventory = ({ inventory }) => {
@@ -12,7 +13,7 @@ const Inventory = ({ inventory }) => {
 
     return (
         <div className='inventory-container'>
-
+            <PageTitle title="Inventory"></PageTitle>
             <img src={img} alt="" />
             <div className='mt-5'>
                 <h2> {name}</h2>

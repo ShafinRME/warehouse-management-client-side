@@ -1,6 +1,7 @@
 import React from 'react';
 import './Chart.css'
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Tooltip, LineChart, Line, XAxis, YAxis, CartesianGrid, AreaChart, Area, BarChart, Legend, Bar, LabelList } from 'recharts';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const Chart = () => {
     const data = [
@@ -45,6 +46,7 @@ const Chart = () => {
     ]
     return (
         <div className='container charts '>
+            <PageTitle title="Chart"></PageTitle>
             <div >
                 <h3 className='text-center text-warning'>Name vs Power</h3>
                 <RadarChart cx="50%" cy="50%" outerRadius="80%" width={400} height={400} data={data}>

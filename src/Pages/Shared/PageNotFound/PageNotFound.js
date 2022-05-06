@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import PageTitle from '../PageTitle/PageTitle';
 import './PageNotFound.css'
 
 const PageNotFound = () => {
@@ -9,6 +10,7 @@ const PageNotFound = () => {
     }
     return (
         <div>
+            <PageTitle title="404"></PageTitle>
             <div>
                 <div className='footer1'>
                     <h1>OOOOOPPPPPSSSSSSSS!!!!!!!!</h1>

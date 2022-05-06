@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 import Inventory from '../Inventory/Inventory';
 import './Inventories.css'
 
@@ -12,6 +13,7 @@ const Inventories = () => {
     }, [])
     return (
         <div id='inventories' className='container '>
+            <PageTitle title="Inventories"></PageTitle>
             <h2 className='text-center p-5 mt-3 mb-3 inventories-header'>Our Inventories</h2>
             <div className="inventories-container">
                 {
@@ -23,6 +25,7 @@ const Inventories = () => {
                     </Inventory>)
                 }
             </div>
+            <button className='manage-button'>Manage Inventories</button>
 
         </div>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 import Banner from '../Banner/Banner';
 import Comments from '../Comments/Comments';
 import Countup from '../Countup/Countup';
@@ -8,6 +9,7 @@ import './Home.css'
 const Home = () => {
     return (
         <div>
+            <PageTitle title="Home"></PageTitle>
             <Banner></Banner>
             <Inventories></Inventories>
             <Comments></Comments>

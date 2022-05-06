@@ -1,10 +1,12 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 import './Blogs.css'
 
 const Blogs = () => {
     return (
         <div className='container mt-5'>
+            <PageTitle title="Blogs"></PageTitle>
             <div  >
                 <h3 className='text-center text-primary'>Difference between Javascript and NodeJS ?</h3>
                 <Table striped bordered hover >
