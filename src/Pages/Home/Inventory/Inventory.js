@@ -4,7 +4,7 @@ import PageTitle from '../../Shared/PageTitle/PageTitle';
 import './Inventory.css'
 
 const Inventory = ({ inventory }) => {
-    const { id, name, price, description, img, quantity, supplier } = inventory;
+    const { _id, name, price, description, img, quantity, supplier } = inventory;
 
     const navigate = useNavigate();
     const navigateToUpdateInventory = id => {
@@ -21,7 +21,7 @@ const Inventory = ({ inventory }) => {
                 <h5 className='text-primary'>Price: {price}</h5>
                 <h5 className='text-info'>Quantity: {quantity}</h5>
                 <h4 className='text-warning'>Supplier: {supplier}</h4>
-                <button onClick={() => navigateToUpdateInventory(id)} className='inventory-button text-white'>Update</button>
+                <button onClick={() => navigateToUpdateInventory(_id)} className='inventory-button text-white'>Update</button>
             </div>
 
         </div>

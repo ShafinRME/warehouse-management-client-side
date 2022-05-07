@@ -1,0 +1,24 @@
+.update-inventory-container {
+    width: 600px;
+    height: 650px;
+    text-align: center;
+    border: 2px solid fuchsia;
+    border-radius: 30px;
+    background-color: #283b41;
+    color: white;
+    font-family: Segoe Print;
+}
+
+.update-inventory-container img {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.update-inventory-container button {
+    width: 50%;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: rgba(46, 139, 86, 0.397);
+    color: white;
+}

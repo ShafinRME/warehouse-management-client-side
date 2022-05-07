@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddItem from './Pages/AddItem/AddItem';
 import Blogs from './Pages/Home/Blogs/Blogs';
 import Chart from './Pages/Home/Chart/Chart';
 import Home from './Pages/Home/Home/Home';
@@ -21,6 +22,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/chart' element={<Chart></Chart>}></Route>
         <Route path='/inventory/:inventoryId' element={<AuthRequirement><UpdateInventory></UpdateInventory></AuthRequirement>}></Route>
+        <Route path='/addinventory' element={<AuthRequirement><AddItem></AddItem></AuthRequirement>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/manageItems' element={<ManageItems></ManageItems>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

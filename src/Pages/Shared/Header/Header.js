@@ -34,6 +34,7 @@ const Header = () => {
                             <NavDropdown.Item href="home#footer">Footer</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link as={Link} to="/manageItems">Manage Inventories</Nav.Link>
+                        <Nav.Link as={Link} to="/addinventory">Add Inventory</Nav.Link>
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">My Items</Nav.Link>

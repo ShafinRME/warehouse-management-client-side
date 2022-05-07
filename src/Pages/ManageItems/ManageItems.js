@@ -7,7 +7,7 @@ const ManageItems = () => {
     const [inventories, setInventories] = useState([]);
 
     useEffect(() => {
-        fetch('inventories.json')
+        fetch('http://localhost:5000/inventory')
             .then(res => res.json())
             .then(data => setInventories(data));
     }, [])
@@ -18,7 +18,7 @@ const ManageItems = () => {
             <div className='manage-inventories-container '>
                 {
                     inventories.map(inventory => <ManageItem
-                        key={inventory.id}
+                        key={inventory._id}
                         inventory={inventory}
                     ></ManageItem>)
                 }
