@@ -17,7 +17,7 @@ In my website i use different types of components such as login, inventories, bl
 * We can see the statistics of our website from chart navigation.
 * We can delete the inventory.
 * There is 4 types login system.
-* There is JWT system is working.
+* There is JWT system is working..
 
 
 

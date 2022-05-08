@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
 import './UpdateInventory.css'
 
 const UpdateInventory = () => {
+
     const { inventoryId } = useParams();
     const [inventory, setInventory] = useState({});
 
@@ -14,6 +15,9 @@ const UpdateInventory = () => {
             .then(data => setInventory(data));
 
     }, [])
+    const priceRef = useRef('');
+
+
     return (
         <div className='container update-inventory-container'>
             <PageTitle title="Update-Inventory"></PageTitle>
@@ -24,7 +28,8 @@ const UpdateInventory = () => {
                 <h5 className='text-primary'>Price: {inventory.price}</h5>
                 <h5 className='text-info'>Quantity: {inventory.quantity}</h5>
                 <h4 className='text-warning'>Supplier: {inventory.supplier}</h4>
-                <button>Deliver</button>
+                <button >Deliver</button>
+                <div> <input ref={priceRef} type="number" /> <button>Insert</button> </div>
             </div>
 
         </div>

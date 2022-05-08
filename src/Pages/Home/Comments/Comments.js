@@ -6,7 +6,7 @@ import './Comments.css'
 const Comments = () => {
     const [comments, setComments] = useState([]);
     useEffect(() => {
-        fetch('comments.json')
+        fetch('http://localhost:5000/comment')
             .then(res => res.json())
             .then(data => setComments(data))
     }, []);
@@ -19,7 +19,7 @@ const Comments = () => {
             <div className='comments-container'>
                 {
                     comments.map(comment => <Comment
-                        key={comment.id}
+                        key={comment._id}
                         comment={comment}
                     ></Comment>)
                 }

@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useInventories from '../../../hooks/useInventories';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
 import Inventory from '../Inventory/Inventory';
 import './Inventories.css'
 
 const Inventories = () => {
+    const navigate = useNavigate();
+    const handleToManage = () => {
+        navigate('/manageItems');
+    }
     const [inventories] = useInventories();
     return (
         <div id='inventories' className='container '>
@@ -20,7 +25,7 @@ const Inventories = () => {
                     </Inventory>)
                 }
             </div>
-            <button className='manage-button'>Manage Inventories</button>
+            <button className='manage-button' onClick={handleToManage}>Manage Inventories</button>
 
         </div>
     );
