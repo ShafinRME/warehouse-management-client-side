@@ -2,6 +2,7 @@ import React from 'react';
 import './Footer.css'
 
 const Footer = () => {
+    // This footer section code
     return (
         <footer id='footer' className=' footer-container'>
             <div className='text-center'>

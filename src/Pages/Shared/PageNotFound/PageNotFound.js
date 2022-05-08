@@ -4,6 +4,7 @@ import PageTitle from '../PageTitle/PageTitle';
 import './PageNotFound.css'
 
 const PageNotFound = () => {
+    // This page not found part
     const navigate = useNavigate();
     const handleNavigate = () => {
         navigate('/home');

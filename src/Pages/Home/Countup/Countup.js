@@ -6,11 +6,12 @@ import './Countup.css'
 
 const Countup = () => {
     return (
+        // Extra part is added by using countup method
         <div id='statistics' className='container'>
             <h3 className='text-center p-5 mt-3 mb-3 stat-summary'>Our Statistics</h3>
             <div className='countup mb-3'>
 
-                <h3 className='header'>Income Statement</h3>
+                <h3 className='header'>Financial Statement</h3>
                 <div className='inventories-summary'>
                     <div>
                         <CountUp className='counter'

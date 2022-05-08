@@ -10,6 +10,7 @@ const Inventories = () => {
     const handleToManage = () => {
         navigate('/manageItems');
     }
+    // Using hook
     const [inventories] = useInventories();
     return (
         <div id='inventories' className='container '>
@@ -17,6 +18,7 @@ const Inventories = () => {
             <h2 className='text-center p-5 mt-3 mb-3 inventories-header'>Our Inventories</h2>
             <div className="inventories-container">
                 {
+                    // Doing slicing in api data from server
                     inventories.slice(0, 6).map(inventory => <Inventory
                         key={inventory._id}
                         inventory={inventory}

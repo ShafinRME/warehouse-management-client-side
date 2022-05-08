@@ -7,9 +7,10 @@ const UpdateInventory = () => {
 
     const { inventoryId } = useParams();
     const [inventory, setInventory] = useState({});
+    // Fetching data from server site
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://mighty-hamlet-99009.herokuapp.com/inventory/${inventoryId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data));
@@ -19,6 +20,7 @@ const UpdateInventory = () => {
 
 
     return (
+        // Showing data on UI
         <div className='container update-inventory-container'>
             <PageTitle title="Update-Inventory"></PageTitle>
             <img src={inventory.img} alt="" />

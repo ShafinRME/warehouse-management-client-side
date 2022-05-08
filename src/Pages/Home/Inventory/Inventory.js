@@ -12,6 +12,7 @@ const Inventory = ({ inventory }) => {
     }
 
     return (
+        // Inventory showing on UI
         <div className='inventory-container'>
             <PageTitle title="Inventory"></PageTitle>
             <img src={img} alt="" />

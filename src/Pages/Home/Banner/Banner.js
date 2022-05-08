@@ -4,6 +4,7 @@ import './Banner.css'
 
 const Banner = () => {
     return (
+        // Banner is added by using react bootstrap carousel
         <Carousel id='banner' fade className='mb-4'>
             <Carousel.Item>
                 <img

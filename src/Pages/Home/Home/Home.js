@@ -9,6 +9,7 @@ import './Home.css'
 const Home = () => {
     return (
         <div>
+            {/* Adding page title and components in home page */}
             <PageTitle title="Home"></PageTitle>
             <Banner></Banner>
             <Inventories></Inventories>

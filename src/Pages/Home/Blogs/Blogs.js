@@ -5,6 +5,7 @@ import './Blogs.css'
 
 const Blogs = () => {
     return (
+        // Here is the answer of 4 questions
         <div className='container mt-5'>
             <PageTitle title="Blogs"></PageTitle>
             <div  >

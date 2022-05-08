@@ -34,6 +34,7 @@ const Header = () => {
                             <NavDropdown.Item href="home#footer">Footer</NavDropdown.Item>
                         </NavDropdown>
                         {
+                            // For private route section
                             user && <>
                                 <Nav.Link as={Link} to="/manageItems">Manage Inventories</Nav.Link>
                                 <Nav.Link as={Link} to="/addinventory">Add Inventory</Nav.Link>
@@ -46,6 +47,7 @@ const Header = () => {
                         <Nav.Link as={Link} to="/chart">Charts</Nav.Link>
                         <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
                         {
+                            // Sign in and sign out toggle
                             user ?
                                 <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>Sign Out</button>
                                 :

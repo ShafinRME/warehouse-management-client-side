@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import './MyItems.css'
 
 const MyItems = () => {
+    // Showing my item data
     const navigate = useNavigate();
     const handleToManage = () => {
         navigate('/manageItems');
@@ -15,12 +16,16 @@ const MyItems = () => {
     useEffect(() => {
         const getMyItem = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/inventory?email=${email}`;
-            const { data } = await axios.get(url);
+            const url = `https://mighty-hamlet-99009.herokuapp.com/inventory?email=${email}`;
+            const { data } = await axios.get(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             setInvent(data)
         }
         getMyItem();
-    }, [])
+    }, [user])
     return (
         <div>
             <h2>My Added Items{invent.length}</h2>

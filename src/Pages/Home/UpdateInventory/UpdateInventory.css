@@ -1,6 +1,6 @@
 .update-inventory-container {
     width: 600px;
-    height: 650px;
+    height: 800px;
     text-align: center;
     border: 2px solid fuchsia;
     border-radius: 30px;
@@ -21,4 +21,17 @@
     border-radius: 10px;
     background-color: rgba(46, 139, 86, 0.397);
     color: white;
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 800px) {
+    .update-inventory-container {
+        width: 380px;
+        height: 900px;
+        text-align: center;
+        border: 2px solid fuchsia;
+        border-radius: 30px;
+        background-color: #283b41;
+        color: white;
+        font-family: Segoe Print;
+    }
 }

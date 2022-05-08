@@ -4,11 +4,12 @@ import PageTitle from '../Shared/PageTitle/PageTitle';
 import './ManageItems.css'
 
 const ManageItems = () => {
+    // Getting data from hook and sending data on Server
     const [inventories, setInventories] = useInventories();
     const handleDelete = id => {
         const confirm = window.confirm('Are you are you want to Delete this inventory???');
         if (confirm) {
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://mighty-hamlet-99009.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -22,6 +23,7 @@ const ManageItems = () => {
         }
     }
     return (
+        // Showing data on UI
         <div className='container mb-5'>
             <PageTitle title="ManageItems"></PageTitle>
             <h3 className='text-center p-5 mt-3 mb-3 inventories-header'>Manage Inventories</h3>
