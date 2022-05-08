@@ -9,6 +9,7 @@ import AuthRequirement from './Pages/LogIn/AuthRequirement/AuthRequirement';
 import Login from './Pages/LogIn/Login/Login';
 import Register from './Pages/LogIn/Register/Register';
 import ManageItems from './Pages/ManageItems/ManageItems';
+import MyItems from './Pages/MyItems/MyItems';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import PageNotFound from './Pages/Shared/PageNotFound/PageNotFound';
@@ -25,6 +26,7 @@ function App() {
         <Route path='/addinventory' element={<AuthRequirement><AddItem></AddItem></AuthRequirement>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/manageItems' element={<AuthRequirement><ManageItems></ManageItems></AuthRequirement>}></Route>
+        <Route path='/myItems' element={<AuthRequirement><MyItems></MyItems></AuthRequirement>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
