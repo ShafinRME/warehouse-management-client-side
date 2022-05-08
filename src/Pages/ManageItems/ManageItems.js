@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import useInventories from '../../hooks/useInventories';
 import ManageItem from '../ManageItem/ManageItem';
 import PageTitle from '../Shared/PageTitle/PageTitle';
 import './ManageItems.css'
 
 const ManageItems = () => {
-    const [inventories, setInventories] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/inventory')
-            .then(res => res.json())
-            .then(data => setInventories(data));
-    }, [])
+    const [inventories] = useInventories();
     return (
         <div className='container mb-5'>
             <PageTitle title="ManageItems"></PageTitle>
